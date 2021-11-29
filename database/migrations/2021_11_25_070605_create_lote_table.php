@@ -14,7 +14,14 @@ class CreateLoteTable extends Migration
     public function up()
     {
         Schema::create('lote', function (Blueprint $table) {
-            $table->id();
+            $table->id('idlote');
+            $table->unsignedBigInteger('idproducto');
+            $table->unsignedBigInteger('idproveedor');
+            $table->integer('stock');
+            $table->date('vencimiento');
+            $table->integer('precio_compra');
+            $table->foreign('idproducto')->references('idproducto')->on('producto');
+            $table->foreign('idproveedor')->references('idproveedor')->on('proveedor');
             $table->timestamps();
         });
     }

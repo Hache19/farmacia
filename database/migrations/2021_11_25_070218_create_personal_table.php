@@ -14,7 +14,15 @@ class CreatePersonalTable extends Migration
     public function up()
     {
         Schema::create('personal', function (Blueprint $table) {
-            $table->id();
+            $table->id('idpersonal');
+            $table->unsignedBigInteger('idrol');
+            $table->string('nombre_personal');
+            $table->string('apellido_personal');
+            $table->integer('ci');
+            $table->date('fecha_nac');
+            $table->integer('celular');
+            $table->string('genero');
+            $table->foreign('idrol')->references('idrol')->on('rol');
             $table->timestamps();
         });
     }

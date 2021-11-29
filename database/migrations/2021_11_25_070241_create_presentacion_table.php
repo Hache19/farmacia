@@ -14,7 +14,8 @@ class CreatePresentacionTable extends Migration
     public function up()
     {
         Schema::create('presentacion', function (Blueprint $table) {
-            $table->id();
+            $table->id('idpresentacion');
+            $table->string('nombre_presentacion');
             $table->timestamps();
         });
     }

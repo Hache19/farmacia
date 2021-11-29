@@ -14,7 +14,16 @@ class CreateProductoTable extends Migration
     public function up()
     {
         Schema::create('producto', function (Blueprint $table) {
-            $table->id();
+            $table->id('idproducto');
+            $table->unsignedBigInteger('idpresentacion');
+            $table->unsignedBigInteger('idtipo_producto');
+            $table->unsignedBigInteger('idlaboratorio');
+            $table->string('nombre_producto');
+            $table->string('descripcion');
+            $table->integer('precio');
+            $table->foreign('idpresentacion')->references('idpresentacion')->on('presentacion');
+            $table->foreign('idtipo_producto')->references('idtipo_producto')->on('tipoproducto');
+            $table->foreign('idlaboratorio')->references('idlaboratorio')->on('laboratorio');
             $table->timestamps();
         });
     }
