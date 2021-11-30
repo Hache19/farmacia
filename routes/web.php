@@ -28,9 +28,12 @@ use App\Http\Controllers\LoteController;
 Route::get('/', HomeController::class);
 
 //Rol
-Route::get('rol',[RolController::class, 'index']);
-Route::get('rol/create',[RolController::class, 'create']);
-Route::get('rol/{rol}',[RolController::class, 'show']);
+Route::get('rol',[RolController::class, 'index'])->name('rol.index');
+Route::get('rol/create',[RolController::class, 'create'])->name('rol.create');
+Route::post('rol', [RolController::class, 'store'])->name('rol.store');
+Route::get('rol/{rol}',[RolController::class, 'show'])->name('rol.show');
+Route::get('rol/{rol}/edit',[RolController::class, 'edit'])->name('rol.edit');
+Route::put('rol/{rol}', [RolController::class, 'update'])->name('rol.update');
 
 //Personal
 Route::get('personal',[PersonalController::class, 'index']);
@@ -42,7 +45,7 @@ Route::get('presentacion',[PresentacionController::class, 'index']);
 Route::get('presentacion/create',[PresentacionController::class, 'create']);
 Route::get('presentacion/{presentacion}',[PresentacionController::class, 'show']);
 
-//tipoproducto
+//Tipoproducto
 Route::get('tipoproducto',[TipoProductoController::class, 'index']);
 Route::get('tipoproducto/create',[TipoProductoController::class, 'create']);
 Route::get('tipoproducto/{tipoproducto}',[TipoProductoController::class, 'show']);
