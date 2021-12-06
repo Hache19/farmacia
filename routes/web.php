@@ -25,65 +25,55 @@ use App\Http\Controllers\LoteController;
 |
 */
 
-Route::get('/', HomeController::class);
+//Route::get('/', HomeController::class);
 
-//Rol
-Route::get('rol',[RolController::class, 'index'])->name('rol.index');
-Route::get('rol/create',[RolController::class, 'create'])->name('rol.create');
-Route::post('rol', [RolController::class, 'store'])->name('rol.store');
-Route::get('rol/{rol}',[RolController::class, 'show'])->name('rol.show');
-Route::get('rol/{rol}/edit',[RolController::class, 'edit'])->name('rol.edit');
-Route::put('rol/{rol}', [RolController::class, 'update'])->name('rol.update');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-//Personal
-Route::get('personal',[PersonalController::class, 'index']);
-Route::get('personal/create',[PersonalController::class, 'create']);
-Route::get('personal/{personal}',[PersonalController::class, 'show']);
-
-//Presentacion
-Route::get('presentacion',[PresentacionController::class, 'index']);
-Route::get('presentacion/create',[PresentacionController::class, 'create']);
-Route::get('presentacion/{presentacion}',[PresentacionController::class, 'show']);
-
-//Tipoproducto
-Route::get('tipoproducto',[TipoProductoController::class, 'index']);
-Route::get('tipoproducto/create',[TipoProductoController::class, 'create']);
-Route::get('tipoproducto/{tipoproducto}',[TipoProductoController::class, 'show']);
-
-//laboratorio
-Route::get('laboratorio',[LaboratorioController::class, 'index']);
-Route::get('laboratorio/create',[LaboratorioController::class, 'create']);
-Route::get('laboratorio/{laboratorio}',[LaboratorioController::class, 'show']);
-
-//clientes
-Route::get('clientes', [ClientesController::class,'index'] );
-Route::get('clientes/create', [ClientesController::class,'create']);
-Route::get('clientes/{clientes}', [ClientesController::class,'show']);
-
-//proveedor
-Route::get('proveedor', [ProveedorController::class,'index'] );
-Route::get('proveedor/create', [ProveedorController::class,'create']);
-Route::get('proveedor/{proveedor}', [ProveedorController::class,'show']);
-
-//venta
-Route::get('venta', [VentaController::class,'index'] );
-Route::get('venta/create', [VentaController::class,'create']);
-Route::get('venta/{venta}', [VentaController::class,'show']);
-
-//producto
-Route::get('producto', [ProductoController::class,'index'] );
-Route::get('producto/create', [ProductoController::class,'create']);
-Route::get('producto/{producto}', [ProductoController::class,'show']);
-
-//productoventa
-Route::get('productoventa', [ProductoVentaController::class,'index'] );
-Route::get('productoventa/create', [ProductoVentaController::class,'create']);
-Route::get('productoventa/{productoventa}', [ProductoVentaController::class,'show']);
-
-//Lote
-Route::get('lote', [LoteController::class,'index'] );
-Route::get('lote/create', [LoteController::class,'create']);
-Route::get('lote/{lote}', [LoteController::class,'show']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+//Rol
+Route::resource('rol', RolController::class);
+
+//Personal
+Route::resource('personal', PersonalController::class);
+
+//Presentacion
+Route::resource('presentacion', PresentacionController::class);
+
+
+//Tipoproducto
+Route::resource('tipoproducto', TipoProductoController::class);
+
+
+//laboratorio
+Route::resource('laboratorio', LaboratorioController::class);
+
+//clientes
+Route::resource('clientes', ClientesController::class);
+
+
+//proveedor
+Route::resource('proveedor', ProveedorController::class);
+
+
+//venta
+Route::resource('venta', VentaController::class);
+
+
+//producto
+Route::resource('producto', ProductoController::class);
+
+
+//productoventa
+Route::resource('productoventa', ProductoVentaController::class);
+
+
+//Lote
+Route::resource('lote', LoteController::class);
+
+
