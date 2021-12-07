@@ -26,21 +26,28 @@
           <tbody class="bg-white">
               @foreach ($rol as $rol)                        
             <tr class="text-gray-700">
-              <td class="px-4 py-3 border">
-                <div class="flex items-center text-sm">
-                  <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                  </div>
-                  <div>
-                    <a href="{{route('rol.show', $rol->id)}}"><p class="font-semibold text-black"> {{$rol->nombre_rol}} </p></a>                    
-                  </div>
-                  
-                </div>
-              </td>
-              <td class="px-4 py-3 text-ms font-semibold border">{{$rol->estado}}</td>
-             
-              <td class="px-4 py-3 text-ms font-semibold border">
-                <a href=" {{route('rol.edit', $rol)}} " class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Editar</a>
+              <td class="px-4 py-3 text-ms font-semibold border">{{$rol->nombre_rol}}</td>
+
+              
+              @if($rol->estado == 'activo')
+                <td class="px-4 py-3 text-xs border">
+                  <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$rol->estado}} </span>
+                </td>
+              @else
+                <td class="px-4 py-3 text-xs border">
+                  <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$rol->estado}} </span>
+                </td>
+              @endif
+              
+              <td class="px-4 py-3 text-ms font-semibold border">                
+                <div>
+                  <a class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-green-300"
+                  href="{{route('rol.show', $rol->id)}}">
+                      Editar
+                  </a>
+              </div>
+              <br>
+                
                 <form action="{{ route('rol.destroy', $rol) }}" method="POST">
                   @csrf @method('DELETE')
                   <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">Eliminar</button>

@@ -16,12 +16,12 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                {{$rol->nombre_rol}}
+                                Nombre: {{$rol->nombre_rol}}
                             </div>
                             <div class="text-sm mt-2">
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    {{$rol->estado}}
+                                    Estado: {{$rol->estado}}
                                 </div>
                             </div>
                         </div>
@@ -30,8 +30,12 @@
                 </div>
             </div>
             <a href="{{ route('rol.index') }}"
-                class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Volver</a>
+                class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                Volver
+            </a>
             <a href="{{ route('rol.edit', $rol) }}"
-                class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Editar</a>
+                class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                Editar
+            </a>
         </div>
 </x-app-layout>
