@@ -18,17 +18,21 @@
                     <x-jet-nav-link href="{{ route('rol.index') }}" :active="request()->routeIs('rol.*')">
                         Rol
                     </x-jet-nav-link>
+
                     <x-jet-nav-link href="{{ route('personal.index') }}" :active="request()->routeIs('personal.*')">
                         Personal
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('presentacion.index') }}" :active="request()->routeIs('presentacion.*')">
+                    <x-jet-nav-link href="{{ route('presentacion.index') }}" :active="request()->routeIs('personal.*')">
                         Presentacion
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('tipoproducto.index') }}" :active="request()->routeIs('tipoproducto.*')">
                         Tipo Producto
-                    </x-jet-nav-link>                                        
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('laboratorio.index') }}" :active="request()->routeIs('laboratorio.*')">
                         Laboratorio
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
+                        Clientes
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('proveedor.index') }}" :active="request()->routeIs('proveedor.*')">
                         Proveedor
@@ -46,6 +50,7 @@
                         Lote
                     </x-jet-nav-link>
                 </div>
+                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

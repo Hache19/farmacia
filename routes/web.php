@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\PresentacionController;
@@ -13,6 +15,8 @@ use App\Http\Controllers\VentaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProductoVentaController;
 use App\Http\Controllers\LoteController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +35,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', TiendaController::class)->name('dashboard');
+Route::resource('tiendas', TiendaController::class);
+Route::get('tiendas/{producto}', [TiendaController::class,'crearPedido'])->name('tiendas.crearPedido');
+
 
 
 //Rol
@@ -75,5 +80,6 @@ Route::resource('productoventa', ProductoVentaController::class);
 
 //Lote
 Route::resource('lote', LoteController::class);
+
 
 

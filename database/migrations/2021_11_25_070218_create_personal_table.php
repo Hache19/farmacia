@@ -22,7 +22,7 @@ class CreatePersonalTable extends Migration
             $table->date('fecha_nac');
             $table->integer('celular');
             $table->string('genero');
-            $table->foreign('idrol')->references('idrol')->on('rol');
+            $table->foreign('idrol')->references('id')->on('rols');
             $table->timestamps();
         });
     }

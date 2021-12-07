@@ -15,7 +15,7 @@ class TiendaController extends Controller
 
     public function __invoke()
     {   
-        return redirect()->route('tiendas.index');
+        return redirect()->route('tiendas._index');
     }
 
     /**
@@ -26,9 +26,9 @@ class TiendaController extends Controller
     public function index()
     {
         $productos = Producto::all();
-        $tipoproducto = Tipoproducto::all();
+        $tipoproductos = Tipoproducto::all();
 
-        return view('tiendas._index', compact('productos', 'tipoproducto'));
+        return view('tiendas._index', compact('productos', 'tipoproductos'));
     }
 
     /**
@@ -64,9 +64,9 @@ class TiendaController extends Controller
         $venta->save();
 
         $productos = Producto::all();
-        $tipoproducto = Tipoproducto::all();
+        $tipoproductos = Tipoproducto::all();    
 
-        return view('tiendas._index', compact('productos', 'tipoproducto'))->with('success', 'Se ha procesado tu pedido');
+        return view('tiendas._index', compact('productos', 'tipoproductos'))->with('success', 'Se ha procesado tu pedido');
 
         
     }

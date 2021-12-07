@@ -19,7 +19,7 @@ class CreateProductoventaTable extends Migration
             $table->unsignedBigInteger('idventa');
             $table->integer('cantidad');
             $table->integer('sub_total');
-            $table->foreign('idproducto')->references('idproducto')->on('producto');
+            $table->foreign('idproducto')->references('idproducto')->on('productos');
             $table->foreign('idventa')->references('idventa')->on('venta');
             $table->timestamps();
         });

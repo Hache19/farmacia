@@ -20,7 +20,7 @@ class CreateLoteTable extends Migration
             $table->integer('stock');
             $table->date('vencimiento');
             $table->integer('precio_compra');
-            $table->foreign('idproducto')->references('idproducto')->on('producto');
+            $table->foreign('idproducto')->references('idproducto')->on('productos');
             $table->foreign('idproveedor')->references('idproveedor')->on('proveedor');
             $table->timestamps();
         });
