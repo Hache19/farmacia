@@ -6,7 +6,7 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form id="form" method="POST" action="{{ route('register') }}">
             @csrf
 
             <div>
@@ -28,6 +28,12 @@
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+
+            <button class="g-recaptcha" 
+                data-sitekey="6LeWVqEdAAAAAJr_8ldYDPI3uN11NAt6Ef1-CCjI" 
+                data-callback='onSubmit' 
+                data-action='submit'>Submit
+            </button>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

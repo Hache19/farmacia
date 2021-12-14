@@ -16,25 +16,29 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Nombre: {{$clientes->nombre_cliente}}
+                                ID Cliente: {{$cliente->idcliente}}
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Apellido: {{$clientes->apellido_cliente}}
+                                Nombre: {{$cliente->nombre_cliente}}
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Ci: {{$clientes->ci}}
+                                Apellido: {{$cliente->apellido_cliente}}
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Direccion: {{$clientes->direccion}}
+                                Ci: {{$cliente->ci}}
+                            </div>
+                            <div
+                                class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+                                Direccion: {{$cliente->direccion}}
                             </div>
 
                             
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Celular: {{$clientes->celular}}
+                                Celular: {{$cliente->celular}}
                             </div>
                             
                         </div>
@@ -42,11 +46,11 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('clientes.index') }}"
+            <a href="{{ route('cliente.index') }}"
                 class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
                 Volver
             </a>
-            <a href="{{ route('clientes.edit',$clientes) }}"
+            <a href="{{ route('cliente.edit',$cliente) }}"
                 class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
                 Editar
             </a>

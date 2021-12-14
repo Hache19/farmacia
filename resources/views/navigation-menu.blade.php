@@ -31,8 +31,8 @@
                     <x-jet-nav-link href="{{ route('laboratorio.index') }}" :active="request()->routeIs('laboratorio.*')">
                         Laboratorio
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
-                        Clientes
+                    <x-jet-nav-link href="{{ route('cliente.index') }}" :active="request()->routeIs('cliente.*')">
+                        Cliente
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('proveedor.index') }}" :active="request()->routeIs('proveedor.*')">
                         Proveedor

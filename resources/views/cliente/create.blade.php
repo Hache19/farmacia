@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Clientes
+            Cliente
         </h2>
     </x-slot>
 
@@ -29,7 +29,7 @@
 
                 <div class="max-w-lg mx-auto">
 
-                    <form action="{{route('clientes.store')}}" method="POST">
+                    <form action="{{route('cliente.store')}}" method="POST">
                         @csrf
                         <div class="mb-6">
                             <label for="nombre_cliente" class="text-sm font-medium text-gray-900 block mb-2">
@@ -143,7 +143,7 @@
                         @enderror
                         
 
-                        <a href="{{ route('clientes.index') }}" class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                        <a href="{{ route('cliente.index') }}" class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
                             Volver
                         </a>
                         <button type="submit" class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"  > 

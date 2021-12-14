@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Clientes
+            Cliente
         </h2>
     </x-slot>
 
@@ -12,7 +12,7 @@
                 <section class="container mx-auto p-6 font-mono">
                     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
                         <div class="w-full overflow-x-auto">
-                            <a href="{{ route('clientes.create') }}"
+                            <a href="{{ route('cliente.create') }}"
                                 class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
                                 Registrar Cliente
                             </a>
@@ -30,25 +30,25 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($clientes as $clientes)
+                                    @foreach ($cliente as $cliente)
                                         <tr class="text-gray-700">
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $clientes->idcliente }}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $clientes->nombre_cliente }}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $clientes->apellido_cliente }}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $clientes->ci }}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $clientes->direccion }}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $clientes->celular }}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cliente->idcliente }}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cliente->nombre_cliente }}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cliente->apellido_cliente }}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cliente->ci }}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cliente->direccion }}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cliente->celular }}</td>
 
                                             <td class="px-4 py-3 text-ms font-semibold border">
                                                 <div>
                                                     <a class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-green-300"
-                                                        href="{{ route('clientes.show', $clientes->idcliente) }}">
+                                                        href="{{ route('cliente.show', $cliente->idcliente) }}">
                                                         Editar
                                                     </a>
                                                 </div>
                                                 <br>
 
-                                                <form action="{{ route('clientes.destroy', $clientes->idcliente) }}" method="POST">
+                                                <form action="{{ route('cliente.destroy', $cliente->idcliente) }}" method="POST">
                                                     @csrf @method('DELETE')
                                                     <button
                                                         class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">Eliminar</button>

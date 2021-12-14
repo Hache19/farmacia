@@ -73,9 +73,6 @@ class ProductoController extends Controller
 
     public function edit(Producto $producto){
 
-    
-
-        
         $presentacion=Presentacion::all();
         $tipoproducto=Tipoproducto::all();
         $laboratorio=Laboratorio::all();
@@ -96,7 +93,7 @@ class ProductoController extends Controller
             'idlaboratorio' => 'required'
         ]);
 
-        $producto = new Producto;
+        //$producto = new Producto;
 
         $producto->nombre_producto = $request->input('nombre_producto');
         $producto->descripcion = $request->input('descripcion');

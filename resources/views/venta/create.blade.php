@@ -82,8 +82,8 @@
                             <select name="idcliente" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 
                                         text-gray-600 placeholder-gray-400
                                         outline-none">                            
-                                @foreach ($clientes as $clientes)
-                                    <option value="{{$clientes->idcliente}}">{{$clientes->nombre_cliente}}</option>                                                
+                                @foreach ($cliente as $cliente)
+                                    <option value="{{$cliente->idcliente}}">{{$cliente->nombre_cliente}}</option>                                                
                                 @endforeach
                             </select>
                         </div>

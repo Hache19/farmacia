@@ -24,7 +24,7 @@
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                idclientes: {{$venta->idcliente}}
+                                idcliente: {{$venta->idcliente}}
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">

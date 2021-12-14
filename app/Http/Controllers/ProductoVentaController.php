@@ -8,7 +8,7 @@ use App\Models\producto;
 use App\Models\venta;
 use Illuminate\Http\Request;
 
-class ProductoVentaController extends Controller
+class ProductoventaController extends Controller
 {
     public function index(){
 
@@ -69,9 +69,6 @@ class ProductoVentaController extends Controller
 
     public function edit(Productoventa $productoventa){
 
-    
-
-        
         $productoventa=Productoventa::all();
         $producto=Producto::all();
         $venta=Venta::all();
@@ -101,7 +98,7 @@ class ProductoVentaController extends Controller
 
         //$rol->update();
 
-        $productoventa->save();
+        //$productoventa->save();
 
         $productoventa=Productoventa::all();
         $producto=Producto::all();

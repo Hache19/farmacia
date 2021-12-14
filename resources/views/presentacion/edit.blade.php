@@ -36,13 +36,7 @@
                             <input value=" {{old('nombre_presentacion', $presentacion->nombre_presentacion)}} " type="text" id="nombre_presentacion" name="nombre_presentacion" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
 
-                        <div class="flex items-center mb-5">
-                            <select name="estado" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >                            
-                                
-                                    <option value="activo">Activo</option>
-                                    <option value="inactivo">Inactivo</option>
-                            </select>
-                        </div>
+                        
 
                         <a href="{{ route('presentacion.index') }}"
                         class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">

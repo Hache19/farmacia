@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipoproducto;
+use App\Models\tipoproducto;
 use Illuminate\Http\Request;
 
-class TipoProductoController extends Controller
+class TipoproductoController extends Controller
 {
 
     public function index(){
@@ -30,6 +30,7 @@ class TipoProductoController extends Controller
         $tipoproducto = new Tipoproducto();
 
         $tipoproducto->nombre_tipo= $request->input('nombre_tipo');
+
         $tipoproducto->save();
         return redirect()->route('tipoproducto.show',$tipoproducto);
         //return view('rol.index', compact('rol'));
@@ -41,8 +42,7 @@ class TipoProductoController extends Controller
 
     public function edit(Tipoproducto $tipoproducto){
         
-        
-        return view('tipoproducto.edit', compact('tipoproduto'));
+        return view('tipoproducto.edit', compact('tipoproducto'));
     }   
 
     public function update(Request $request, Tipoproducto $tipoproducto){

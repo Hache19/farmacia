@@ -7,13 +7,13 @@ use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\PresentacionController;
-use App\Http\Controllers\TipoProductoController;
+use App\Http\Controllers\TipoproductoController;
 use App\Http\Controllers\LaboratorioController;
-use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\ProductoController;
-use App\Http\Controllers\ProductoVentaController;
+use App\Http\Controllers\ProductoventaController;
 use App\Http\Controllers\LoteController;
 
 
@@ -54,14 +54,14 @@ Route::resource('presentacion', PresentacionController::class);
 
 
 //Tipoproducto
-Route::resource('tipoproducto', TipoProductoController::class);
+Route::resource('tipoproducto', TipoproductoController::class);
 
 
 //laboratorio
 Route::resource('laboratorio', LaboratorioController::class);
 
-//clientes
-Route::resource('clientes', ClientesController::class);
+//cliente
+Route::resource('cliente', ClienteController::class);
 
 
 //proveedor
@@ -77,7 +77,7 @@ Route::resource('producto', ProductoController::class);
 
 
 //productoventa
-Route::resource('productoventa', ProductoVentaController::class);
+Route::resource('productoventa', ProductoventaController::class);
 
 
 //Lote

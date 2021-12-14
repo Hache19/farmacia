@@ -18,12 +18,7 @@
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
                                 Nombre presentacion: {{$presentacion->nombre_presentacion}}
                             </div>
-                            <div class="text-sm mt-2">
-                                <div
-                                    class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Estado: {{$presentacion->estado}}
-                                </div>
-                            </div>
+                            
                             
                         </div>
 

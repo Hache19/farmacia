@@ -45,7 +45,7 @@
                         </div>
                         <div class="mb-6">
                             <label for="fecha_nac" class="text-sm font-medium text-gray-900 block mb-2">C.I.:</label>
-                            <input value=" {{old('fecha_nac', $personal->fecha_nac)}} " type="text" id="fecha_nac" name="fecha_nac" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  required="">
+                            <input value=" {{old('fecha_nac', $personal->fecha_nac)}} " type="date" id="fecha_nac" name="fecha_nac" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  required="">
                         </div>
                         <div class="mb-6">
                             <label for="celular" class="text-sm font-medium text-gray-900 block mb-2">Celular:</label>
@@ -56,6 +56,18 @@
                             <input type="radio" name="genero" value="masculino"> Masculino
                             <input type="radio" name="genero" value="femenino"> Femenino<br>
 
+                        </div>
+                        <div class="mb-6">
+                            <label for="idrol" class="text-sm font-medium text-gray-900 block mb-2">
+                                Idrol:
+                            </label>
+                            <select name="idrol" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 
+                                        text-gray-600 placeholder-gray-400
+                                        outline-none">                            
+                                @foreach ($rol as $rol)
+                                    <option value="{{$rol->idrol}}">{{$rol->nombre_rol}}</option>                                                
+                                @endforeach
+                            </select>
                         </div>
                         
 

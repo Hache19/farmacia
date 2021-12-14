@@ -56,15 +56,15 @@ class PersonalController extends Controller
 
     public function show(Personal $personal){
         
-        $personal = Personal::all();
+        //$personal = Personal::all();
         return view('personal.show',compact('personal'));
     }
 
     public function edit(Personal $personal){
 
-        
+        $rol=Rol::all();
         //$personal = Personal::all();
-        return view('personal.edit',compact('personal'));
+        return view('personal.edit',compact(['personal','rol']));
     }   
 
     public function update(Request $request, Personal $personal){
@@ -80,6 +80,7 @@ class PersonalController extends Controller
             'idrol' => 'required'
         ]);
 
+
         $personal->nombre_personal = $request->input('nombre_personal');
         $personal->apellido_personal = $request->input('apellido_personal');
         $personal->ci = $request->input('ci');
@@ -94,7 +95,7 @@ class PersonalController extends Controller
         $personal=Personal::all();
         $rol=Rol::all();
         
-        return view('personal.edit',compact(['personal','rol']));
+        return view('personal.index',compact(['personal','rol']));
         //return redirect()->route('rol.show',$rol);
         
     }

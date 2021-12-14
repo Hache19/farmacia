@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\venta;
-use App\Models\clientes;
+use App\Models\cliente;
 use App\Models\personal;
 use Illuminate\Http\Request;
 
@@ -12,20 +12,20 @@ class VentaController extends Controller
     public function index(){
 
         $venta = Venta::all();
-        $clientes = Clientes::all();
+        $cliente = Cliente::all();
         $personal = Personal::all();
         //$rol = rol::orderBy('id', 'desc')->paginate();
 
-        return view('venta.index', compact(['venta','clientes','personal']));
+        return view('venta.index', compact(['venta','cliente','personal']));
         //return view('rol.index', compact('rol'));
     }
 
     public function create(){
         $venta = Venta::all();
-        $clientes = Clientes::all();
+        $cliente = Cliente::all();
         $personal = Personal::all();
 
-        return view('venta.create', compact(['venta','clientes','personal']));
+        return view('venta.create', compact(['venta','cliente','personal']));
     }
 
     public function store(Request $request){
@@ -47,10 +47,10 @@ class VentaController extends Controller
 
         $venta->save();
         $venta = Venta::all();
-        $clientes = Clientes::all();
+        $cliente = Cliente::all();
         $personal = Personal::all();
 
-        return view('venta.index', compact(['venta','clientes','personal']));
+        return view('venta.index', compact(['venta','cliente','personal']));
         //return redirect()->route('rol.show',$rol);
         //return view('rol.index', compact('rol'));
     }
@@ -85,10 +85,10 @@ class VentaController extends Controller
         $venta->save();
 
         $venta=Venta::all();
-        $clientes=Clientes::all();
+        $cliente=Cliente::all();
         $personal=Personal::all();
 
-        return view('venta.edit',compact(['venta','clientes','personal']));
+        return view('venta.edit',compact(['venta','cliente','personal']));
         //return redirect()->route('rol.show',$rol);
         
     }

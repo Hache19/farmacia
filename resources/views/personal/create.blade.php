@@ -34,7 +34,7 @@
 
                         <div class="mb-6">
                             <label for="nombre_personal" class="text-sm font-medium text-gray-900 block mb-2">Nombre Personal:</label>
-                            <input type="text" id="nombre_rol" name="nombre_personal"
+                            <input type="text" id="nombre_personal" name="nombre_personal"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Nombre" value=" {{old('nombre_personal')}} ">
                         </div>
@@ -154,7 +154,7 @@
                                         text-gray-600 placeholder-gray-400
                                         outline-none">                            
                                 @foreach ($rol as $rol)
-                                    <option value="{{$rol->nombre_rol}}">{{$rol->nombre_rol}}</option>                                                
+                                    <option value="{{$rol->idrol}}">{{$rol->nombre_rol}}</option>                                                
                                 @endforeach
                             </select>
                         </div>

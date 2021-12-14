@@ -21,7 +21,7 @@
                                         class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
                                         <th class="px-4 py-3">Id Productoventa</th>
                                         <th class="px-4 py-3">cantidad</th>
-                                        <th class="px-4 py-3">sub_total</th>
+                                        <th class="px-4 py-3">sub total</th>
                                         <th class="px-4 py-3">Id producto</th>
                                         <th class="px-4 py-3">Id venta</th>
                                     
@@ -38,13 +38,13 @@
                                                 {{ $productoventa->cantidad }}
                                             </td>
                                             <td class="px-4 py-3 text-ms font-semibold border">
-                                                {{ $productoventa->sub_total }}
+                                                {{ $productoventa->subtotal }}
                                             </td>
                                             <td class="px-4 py-3 text-ms font-semibold border">
                                                 {{ $productoventa->idproducto }}
                                             </td>
                                             <td class="px-4 py-3 text-ms font-semibold border">
-                                                {{ $producto->idventa }}
+                                                {{ $productoventa->idventa }}
                                             </td>
                                             
 
@@ -58,7 +58,7 @@
                                                 </div>
                                                 <br>
 
-                                                <form action="{{ route('producto.destroy', $productoventa->idproductoventa) }}" method="POST">
+                                                <form action="{{ route('productoventa.destroy', $productoventa->idproductoventa) }}" method="POST">
                                                     @csrf @method('DELETE')
                                                     <button
                                                         class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">Eliminar</button>
