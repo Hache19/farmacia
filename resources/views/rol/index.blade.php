@@ -18,6 +18,7 @@
         <table class="w-full">
           <thead>
             <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+              <th class="px-4 py-3">IdRol</th>
               <th class="px-4 py-3">Nombre Rol </th>
               <th class="px-4 py-3">Estado</th>
               <th class="px-4 py-3">Acciones</th>
@@ -26,8 +27,8 @@
           <tbody class="bg-white">
               @foreach ($rol as $rol)                        
             <tr class="text-gray-700">
+              <td class="px-4 py-3 text-ms font-semibold border">{{$rol->idrol}}</td>
               <td class="px-4 py-3 text-ms font-semibold border">{{$rol->nombre_rol}}</td>
-
               
               @if($rol->estado == 'activo')
                 <td class="px-4 py-3 text-xs border">
@@ -42,15 +43,16 @@
               <td class="px-4 py-3 text-ms font-semibold border">                
                 <div>
                   <a class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-green-300"
-                  href="{{route('rol.show', $rol->id)}}">
+                  href="{{route('rol.show', $rol->idrol)}}">
                       Editar
                   </a>
-              </div>
-              <br>
+                </div>
+                <br>
                 
-                <form action="{{ route('rol.destroy', $rol) }}" method="POST">
+                <form action="{{ route('rol.destroy', $rol->idrol) }}" method="POST">
                   @csrf @method('DELETE')
-                  <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">Eliminar</button>
+                  <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">
+                    Eliminar</button>
                 </form>
               </td>
             </tr>

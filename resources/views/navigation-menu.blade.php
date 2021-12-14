@@ -22,7 +22,7 @@
                     <x-jet-nav-link href="{{ route('personal.index') }}" :active="request()->routeIs('personal.*')">
                         Personal
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('presentacion.index') }}" :active="request()->routeIs('personal.*')">
+                    <x-jet-nav-link href="{{ route('presentacion.index') }}" :active="request()->routeIs('presentacion.*')">
                         Presentacion
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('tipoproducto.index') }}" :active="request()->routeIs('tipoproducto.*')">

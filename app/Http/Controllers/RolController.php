@@ -25,10 +25,10 @@ class RolController extends Controller
         $request->validate([
             
             'nombre_rol' => 'required',
-            'estado' => 'required',
+            'estado' => 'required'
         ]);
 
-        $rol = new rol;
+        $rol = new Rol;
 
         $rol->nombre_rol = $request->input('nombre_rol');
         $rol->estado = $request->input('estado');
@@ -66,8 +66,7 @@ class RolController extends Controller
         //return redirect()->route('rol.show',$rol);
         
     }
-    public function destroy(Rol $rol)
-    {
+    public function destroy(Rol $rol){
         $rol->delete();
 
         //$rol = Rol::all();

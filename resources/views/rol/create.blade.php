@@ -32,13 +32,13 @@
                     <form action="{{route('rol.store')}}" method="POST">
                         @csrf
                         <div class="mb-6">
-                            <label for="nombre" class="text-sm font-medium text-gray-900 block mb-2">Nombre de
+                            <label for="nombre_rol" class="text-sm font-medium text-gray-900 block mb-2">Nombre de
                                 Rol:</label>
                             <input type="text" id="nombre_rol" name="nombre_rol"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Ingrese el nombre rol" value=" {{old('nombre_rol')}} ">
                         </div>
-                        @error('nombre')
+                        @error('nombre_rol')
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                             role="alert">
                             <span class="block sm:inline">{{$message}}</span>
@@ -56,8 +56,6 @@
                             Estado: <br>
                         </label>
                         <div class="flex items-center mb-5">
-                            <!--         tip - here neede inline-block , but why? -->
-                            
                             
                             <select name="estado" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >                            
                                 
@@ -82,8 +80,7 @@
                         </div>
                         @enderror
 
-                        <a href="{{ route('rol.index') }}"
-                        class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                        <a href="{{ route('rol.index') }}" class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
                             Volver
                         </a>
                         <button type="submit" class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"  > 

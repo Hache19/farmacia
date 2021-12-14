@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Lote extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'stock',
+        'vencimiento',
+        'precio_compra',
+        'idproducto',
+        'idproveedor'
+        
+    ];
+    protected $primaryKey = 'idlote';
 }

@@ -12,6 +12,7 @@ class rol extends Model
         'nombre_rol',
         'estado'
     ];
+    protected $primaryKey = 'idrol';
 
     
 }

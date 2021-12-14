@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Laboratorio extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nombre_laboratorio'
+    ];
+    protected $primaryKey = 'idlaboratorio';
 }
